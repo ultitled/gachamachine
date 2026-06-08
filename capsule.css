@@ -1,0 +1,177 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    background:#f7f3ea;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-family:Arial,sans-serif;
+}
+
+.container{
+    text-align:center;
+}
+
+h1{
+    margin-bottom:40px;
+}
+
+#capsule{
+
+    width:160px;
+    height:160px;
+
+    position:relative;
+
+    margin:auto;
+
+    cursor:pointer;
+
+    animation:
+    dropCapsule 1.5s ease forwards,
+    float 2s ease-in-out infinite 1.5s;
+}
+
+.top,
+.bottom{
+
+    position:absolute;
+
+    width:160px;
+    height:80px;
+
+    transition:1s ease;
+}
+
+.top{
+
+    top:0;
+
+    border-radius:
+    80px 80px 0 0;
+
+    overflow:hidden;
+}
+
+.bottom{
+
+    bottom:0;
+
+    border-radius:
+    0 0 80px 80px;
+}
+
+.top::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:35px;
+    height:140px;
+
+    background:
+    rgba(255,255,255,.35);
+
+    top:-20px;
+    left:25px;
+
+    transform:
+    rotate(25deg);
+}
+
+.open-top{
+    transform:
+    translate(-90px,-120px)
+    rotate(-30deg);
+}
+
+.open-bottom{
+    transform:
+    translate(90px,120px)
+    rotate(30deg);
+}
+
+#letter{
+
+    opacity:0;
+
+    font-size:90px;
+
+    margin-top:20px;
+
+    transform:
+    translateY(70px);
+
+    transition:1s ease;
+}
+
+.show-letter{
+
+    opacity:1;
+
+    transform:
+    translateY(-40px);
+}
+
+@keyframes dropCapsule{
+
+    0%{
+        transform:
+        translateY(-500px);
+    }
+
+    70%{
+        transform:
+        translateY(40px);
+    }
+
+    85%{
+        transform:
+        translateY(-15px);
+    }
+
+    100%{
+        transform:
+        translateY(0);
+    }
+}
+
+@keyframes float{
+
+    0%{
+        transform:
+        translateY(0);
+    }
+
+    50%{
+        transform:
+        translateY(-10px);
+    }
+
+    100%{
+        transform:
+        translateY(0);
+    }
+}
+
+@keyframes wiggle{
+
+    0%{transform:rotate(0);}
+    25%{transform:rotate(-8deg);}
+    50%{transform:rotate(8deg);}
+    75%{transform:rotate(-8deg);}
+    100%{transform:rotate(0);}
+}
+
+.wiggle{
+    animation:
+    wiggle .5s ease;
+}
