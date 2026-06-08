@@ -30,20 +30,24 @@ body{
     display:block;
 }
 
-#coin{
+.coin{
 
-    position:absolute;
+position:absolute;
 
-    width:70px;
+width:70px;
 
-    left:-80px;
-    bottom:50px;
+left:5%;
 
-    cursor:pointer;
+bottom:50px;
 
-    transition:
-    transform 1.5s ease,
-    opacity 1.5s ease;
+z-index:1000;
+
+cursor:pointer;
+
+transition:
+transform 1.5s ease,
+opacity 1.5s ease;
+
 }
 
 #knobHotspot{
